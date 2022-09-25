@@ -16,3 +16,4 @@ rootProject.name = "CodeLabsCM20221-Gr03"
 include ':Cl01_AboutMe'
 include ':Cl02_ColorMyViews'
 include ':Cl03_AboutMeDataBinding'
+include ':Cl04_AndroidTriviaFragment'
