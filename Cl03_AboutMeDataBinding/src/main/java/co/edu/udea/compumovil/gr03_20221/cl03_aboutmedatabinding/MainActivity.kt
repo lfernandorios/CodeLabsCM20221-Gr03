@@ -12,11 +12,14 @@ import co.edu.udea.compumovil.gr03_20221.cl03_aboutmedatabinding.databinding.Act
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val myName: MyName = MyName("Grupo 03 sin Cristian")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.myName = myName
 
         binding.doneButton.setOnClickListener {
             addNickname(it)
@@ -26,11 +29,13 @@ class MainActivity : AppCompatActivity() {
     private fun addNickname(view: View) {
 //        val editText = findViewById<EditText>(R.id.nickname_edit)
 //        val nicknameTextView = findViewById<TextView>(R.id.nickname_text)
-
-        binding.nicknameText.text = binding.nicknameEdit.text.toString()
-        binding.nicknameEdit.visibility = View.GONE
-        binding.doneButton.visibility = View.GONE
-        binding.nicknameText.visibility = View.VISIBLE
+        binding.apply {
+            myName?.nickname = nicknameEdit.text.toString()
+            invalidateAll()
+            nicknameEdit.visibility = View.GONE
+            doneButton.visibility = View.GONE
+            nicknameText.visibility = View.VISIBLE
+        }
 
         // Hide the keyboard.
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
