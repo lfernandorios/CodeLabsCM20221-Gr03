@@ -54,4 +54,9 @@
         android:name="co.edu.udea.compumovil.gr03_20221.cl04_android_trivia_fragment.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="co.edu.udea.compumovil.gr03_20221.cl04_android_trivia_fragment.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 </navigation>
