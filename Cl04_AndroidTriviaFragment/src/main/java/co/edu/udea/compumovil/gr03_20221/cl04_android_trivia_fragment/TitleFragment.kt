@@ -8,7 +8,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import co.edu.udea.compumovil.gr03_20221.cl04_android_trivia_fragment.databinding.FragmentTitleBinding
 
-
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
