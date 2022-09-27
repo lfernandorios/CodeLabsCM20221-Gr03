@@ -2,11 +2,20 @@
 
 
 buildscript {
-    ext.kotlin_version = '1.7.20-RC'
+    ext {
+        kotlin_version = '1.7.20-RC'
+        archLifecycleVersion = '1.1.1'
+        gradleVersion = '4.1.0'
+        supportlibVersion = '1.2.0'
+        dataBindingCompilerVersion = gradleVersion // Always need to be the same.
+        navigationVersion = "2.3.0"
+    }
     repositories {
-        mavenCentral()
+        google()
+        jcenter()
     }
     dependencies {
+        classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -15,6 +24,7 @@ plugins {
     id 'com.android.library' version '7.2.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
 }
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
