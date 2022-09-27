@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import co.edu.udea.compumovil.gr03_20221.cl04_android_trivia_fragment.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
@@ -66,15 +67,16 @@ class GameFragment : Fragment() {
 
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
                     questionIndex++
-                    // Advance to the next question
+
                     if (questionIndex < numQuestions) {
                         currentQuestion = questions[questionIndex]
                         setQuestion()
                         binding.invalidateAll()
-                    } else {
-
+                    } else { view.findNavController()
+                            .navigate(R.id.action_gameFragment_to_gameWonFragment)
                     }
-                } else {
+                } else { view.findNavController().
+                navigate(R.id.action_gameFragment_to_gameOverFragment)
 
                 }
             }
